@@ -1,80 +1,212 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Palmeiras - O Maior do Brasil</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <title>Sociedade Esportiva Palmeiras | Site Oficial</title>
+    <meta name="description" content="Site oficial do Palmeiras - Notícias, jogos, história e tudo sobre o Verdão">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&display=swap" rel="stylesheet">
 </head>
 <body>
-    <header>
-        <div class="logo">
-            <img src="https://logodownload.org/wp-content/uploads/2016/09/palmeiras-logo-1-1.png" alt="Escudo do Palmeiras">
-            <h1>PALMEIRAS</h1>
+    <!-- Header Premium -->
+    <header class="header">
+        <div class="header-container">
+            <a href="/" class="logo">
+                <img src="img/logo-palmeiras.png" alt="Palmeiras" width="120">
+                <span class="sr-only">Palmeiras</span>
+            </a>
+            
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="#home" class="active">Início</a></li>
+                    <li><a href="#noticias">Notícias</a></li>
+                    <li><a href="#elenco">Elenco</a></li>
+                    <li><a href="#jogos">Jogos</a></li>
+                    <li><a href="#historia">História</a></li>
+                    <li><a href="#titulos">Títulos</a></li>
+                </ul>
+            </nav>
+            
+            <div class="header-actions">
+                <button class="btn-mobile">
+                    <span class="hamburger"></span>
+                </button>
+                <a href="#" class="btn btn-primary">Sócio Avanti</a>
+            </div>
         </div>
-        <nav>
-            <ul>
-                <li><a href="#historia">História</a></li>
-                <li><a href="#titulos">Títulos</a></li>
-                <li><a href="#elenco">Elenco</a></li>
-                <li><a href="#noticias">Notícias</a></li>
-            </ul>
-        </nav>
     </header>
 
-    <section class="banner">
-        <div class="banner-text">
-            <h2>Verdão Alviverde</h2>
-            <p>O maior campeão do Brasil!</p>
+    <!-- Hero Section com Parallax -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1 class="hero-title">PALMEIRAS</h1>
+            <p class="hero-subtitle">Maior Campeão do Brasil</p>
+            <div class="hero-buttons">
+                <a href="#jogos" class="btn btn-secondary">Próximos Jogos</a>
+                <a href="#" class="btn btn-outline">Seja Sócio</a>
+            </div>
+        </div>
+        <div class="hero-overlay"></div>
+        <div class="hero-parallax" data-parallax="scroll" data-image-src="img/allianz-parque.jpg"></div>
+    </section>
+
+    <!-- Notícias em Carrossel -->
+    <section id="noticias" class="section news-section">
+        <div class="section-header">
+            <h2>Últimas Notícias</h2>
+            <a href="#" class="see-all">Ver todas</a>
+        </div>
+        
+        <div class="swiper news-slider">
+            <div class="swiper-wrapper">
+                <!-- Itens serão carregados via JS -->
+            </div>
+            <div class="swiper-pagination"></div>
         </div>
     </section>
 
-    <section id="historia" class="section">
-        <h2>Nossa História</h2>
-        <p>Fundado em 26 de agosto de 1914, o Palmeiras é um dos clubes mais tradicionais e vitoriosos do futebol brasileiro.</p>
+    <!-- Próximos Jogos com API -->
+    <section id="jogos" class="section games-section dark-section">
+        <div class="section-header">
+            <h2>Próximos Jogos</h2>
+            <div class="calendar-nav">
+                <button id="prev-month"><i class="fas fa-chevron-left"></i></button>
+                <span id="current-month">Junho 2023</span>
+                <button id="next-month"><i class="fas fa-chevron-right"></i></button>
+            </div>
+        </div>
+        
+        <div class="games-container" id="games-container">
+            <!-- Jogos serão carregados via API -->
+            <div class="loader"></div>
+        </div>
+    </section>
+
+    <!-- Elenco Profissional -->
+    <section id="elenco" class="section team-section">
+        <div class="section-header">
+            <h2>Elenco Profissional</h2>
+            <div class="team-filter">
+                <button class="filter-btn active" data-filter="all">Todos</button>
+                <button class="filter-btn" data-filter="goleiro">Goleiros</button>
+                <button class="filter-btn" data-filter="defesa">Defesa</button>
+                <button class="filter-btn" data-filter="meio">Meio-Campo</button>
+                <button class="filter-btn" data-filter="ataque">Ataque</button>
+            </div>
+        </div>
+        
+        <div class="team-grid" id="team-grid">
+            <!-- Jogadores serão carregados via JS -->
+        </div>
+    </section>
+
+    <!-- História Interativa -->
+    <section id="historia" class="section history-section dark-section">
+        <div class="section-header">
+            <h2>Nossa História</h2>
+        </div>
+        
         <div class="timeline">
-            <!-- Aqui você pode adicionar uma linha do tempo -->
+            <div class="timeline-line"></div>
+            <!-- Itens da linha do tempo serão adicionados via JS -->
         </div>
     </section>
 
-    <section id="titulos" class="section dark">
-        <h2>Títulos Conquistados</h2>
-        <div class="titulos-container">
-            <div class="titulo">
-                <i class="fas fa-trophy"></i>
-                <h3>Libertadores</h3>
-                <p>3 títulos</p>
+    <!-- Títulos com Efeito 3D -->
+    <section id="titulos" class="section trophies-section">
+        <div class="section-header">
+            <h2>Conquistas</h2>
+        </div>
+        
+        <div class="trophies-container">
+            <div class="trophy-card" data-trophy="libertadores">
+                <div class="trophy-3d">
+                    <img src="img/trophy-libertadores.png" alt="Taça Libertadores">
+                </div>
+                <div class="trophy-info">
+                    <h3>Libertadores</h3>
+                    <span class="trophy-count">3</span>
+                    <span class="trophy-years">1999, 2020, 2021</span>
+                </div>
             </div>
-            <div class="titulo">
-                <i class="fas fa-trophy"></i>
-                <h3>Brasileirão</h3>
-                <p>11 títulos</p>
-            </div>
-            <div class="titulo">
-                <i class="fas fa-trophy"></i>
-                <h3>Copa do Brasil</h3>
-                <p>4 títulos</p>
-            </div>
+            
+            <!-- Outros títulos... -->
         </div>
     </section>
 
-    <section id="elenco" class="section">
-        <h2>Elenco Atual</h2>
-        <div class="jogadores">
-            <!-- Aqui você pode adicionar os jogadores -->
+    <!-- Footer Premium -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-logo">
+                <img src="img/logo-palmeiras-white.png" alt="Palmeiras" width="150">
+            </div>
+            
+            <div class="footer-links">
+                <div class="links-column">
+                    <h3>O Clube</h3>
+                    <ul>
+                        <li><a href="#">História</a></li>
+                        <li><a href="#">Diretoria</a></li>
+                        <li><a href="#">Estádio</a></li>
+                        <li><a href="#">Museu</a></li>
+                    </ul>
+                </div>
+                
+                <div class="links-column">
+                    <h3>Futebol</h3>
+                    <ul>
+                        <li><a href="#">Elenco</a></li>
+                        <li><a href="#">Comissão Técnica</a></li>
+                        <li><a href="#">Calendário</a></li>
+                        <li><a href="#">Ingressos</a></li>
+                    </ul>
+                </div>
+                
+                <div class="links-column">
+                    <h3>Sócio</h3>
+                    <ul>
+                        <li><a href="#">Avanti</a></li>
+                        <li><a href="#">Benefícios</a></li>
+                        <li><a href="#">Seja Sócio</a></li>
+                        <li><a href="#">Área do Sócio</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-social">
+                <h3>Siga o Palmeiras</h3>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                    <a href="#"><i class="fab fa-tiktok"></i></a>
+                </div>
+                
+                <div class="app-download">
+                    <a href="#"><img src="img/google-play.png" alt="Google Play" width="120"></a>
+                    <a href="#"><img src="img/app-store.png" alt="App Store" width="120"></a>
+                </div>
+            </div>
         </div>
-    </section>
-
-    <footer>
-        <p>© 2023 Site não oficial do Palmeiras - Desenvolvido por [Seu Nome]</p>
-        <div class="social">
-            <a href="#"><i class="fab fa-facebook"></i></a>
-            <a href="#"><i class="fab fa-twitter"></i></a>
-            <a href="#"><i class="fab fa-instagram"></i></a>
+        
+        <div class="footer-bottom">
+            <p>&copy; 2023 Sociedade Esportiva Palmeiras. Todos os direitos reservados.</p>
+            <div class="legal-links">
+                <a href="#">Termos de Uso</a>
+                <a href="#">Política de Privacidade</a>
+            </div>
         </div>
     </footer>
 
-    <script src="script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/ScrollTrigger.min.js"></script>
+    <script src="js/main.js"></script>
 </body>
 </html>
