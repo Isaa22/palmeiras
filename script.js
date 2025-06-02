@@ -1,4 +1,3 @@
-// Efeito de rolagem suave para os links do menu
 document.querySelectorAll('nav a').forEach(anchor => {
     anchor.addEventListener('click', function(e) {
         e.preventDefault();
@@ -13,11 +12,11 @@ document.querySelectorAll('nav a').forEach(anchor => {
     });
 });
 
-// Carregar elenco dinamicamente (exemplo)
+
 document.addEventListener('DOMContentLoaded', function() {
     const jogadoresContainer = document.querySelector('.jogadores');
     
-    // Simulação de dados - na prática, você pode usar uma API ou JSON
+   
     const elenco = [
         { nome: 'Weverton', posicao: 'Goleiro', numero: 21, foto: 'https://via.placeholder.com/150' },
         { nome: 'Gustavo Gómez', posicao: 'Zagueiro', numero: 15, foto: 'https://via.placeholder.com/150' },
